@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportManager Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-running me-2"></i>SportManager Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="nav-home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="nav-teams">Teams</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="nav-players">Players</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="nav-schedule">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="nav-dashboard">Dashboard</a>
+                    </li>
+                </ul>
+                <div class="user-welcome text-light me-3">
+                    Welcome, <span id="user-name">User</span>!
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-filled">Register</a>
+                  </div>
+                  
+                <button class="btn btn-outline-light d-none" id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Alert Messages -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
+        <span id="success-message"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="error-alert">
+        <span id="error-message"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home-page">
+        <!-- Hero Section -->
+        <section class="hero text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold mb-4">Manage Your Teams Like a Pro</h1>
+                <p class="lead mb-5">The all-in-one platform for coaches, managers and sports organizers</p>
+                <button class="btn btn-success btn-lg me-3" id="get-started-btn">Get Started</button>
+                <button class="btn btn-outline-light btn-lg">Learn More</button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Why Choose SportManager Pro?</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100 p-4">
+                            <div class="text-center">
+                                <i class="fas fa-users feature-icon"></i>
+                                <h3>Team Management</h3>
+                                <p class="text-muted">Easily manage multiple teams, track performance, and organize rosters all in one place.</p>
+                                <button class="btn btn-primary btn-lg me-3" id="get-started-btn">open</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100 p-4">
+                            <div class="text-center">
+                                <i class="fas fa-calendar-alt feature-icon"></i>
+                                <h3>Schedule Events</h3>
+                                <p class="text-muted">Keep track of practices, games, and tournaments with our intuitive scheduling system.</p>
+                                <button class="btn btn-primary btn-lg me-3" id="get-started-btn">open</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100 p-4">
+                            <div class="text-center">
+                                <i class="fas fa-chart-line feature-icon"></i>
+                                <h3>Performance Analytics</h3>
+                                <p class="text-muted">Track player stats and team performance with detailed analytics and reports.</p>
+                                <button class="btn btn-primary btn-lg me-3" id="get-started-btn">open</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Trusted by Coaches & Teams</h2>
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <div class="col-md-4">
+                        <div class="testimonial-card card h-100 p-4 text-center">
+                            <div class="testimonial-header d-flex align-items-center justify-content-center mb-3">
+                                <img src="images/balaji.jpg" alt="User" class="testimonial-img rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-0">Bukka Balaji</h5>
+                                    <p class="text-muted mb-0">Throwball Coach</p>
+                                </div>
+                            </div>
+                            <p>"This platform has revolutionized how I manage my team. The scheduling and performance tracking features save me hours every week."</p>
+                            <div class="stars text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Card 2 -->
+                    <div class="col-md-4">
+                        <div class="testimonial-card card h-100 p-4 text-center">
+                            <div class="testimonial-header d-flex align-items-center justify-content-center mb-3">
+                                <img src="/api/placeholder/64/64" alt="User" class="testimonial-img rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-0">Lalitha Kumari</h5>
+                                    <p class="text-muted mb-0">Kho-kho Coach</p>
+                                </div>
+                            </div>
+                            <p>"Managing multiple teams used to be a nightmare. Now with SportManager Pro, I can keep track of everything in one place - rosters, schedules, and performance data."</p>
+                            <div class="stars text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Card 3 -->
+                    <div class="col-md-4">
+                        <div class="testimonial-card card h-100 p-4 text-center">
+                            <div class="testimonial-header d-flex align-items-center justify-content-center mb-3">
+                                <img src="images/manisir.jpg" alt="User" class="testimonial-img rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-0">Dr. Mani Kumar</h5>
+                                    <p class="text-muted mb-0">Secretary General of the Asian TFA</p>
+                                </div>
+                            </div>
+                            <p>"Dr. S. Mani has been instrumental in promoting inclusivity in throwball, supporting initiatives like the first-ever third-gender tournament in Tamil Nadu."</p>
+                            <div class="stars text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    <!-- Login Page -->
+    <div id="login-page" class="py-5">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="text-center mb-4">Login to Your Account</h2>
+                <form id="login-form">
+                    <div class="mb-3">
+                        <label for="login-email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="login-email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="login-password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="login-password" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="remember-me">
+                        <label class="form-check-label" for="remember-me">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <div class="text-center mt-3">
+                        <p>Don't have an account? <a href="#" id="switch-to-register">Register here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Page -->
+    <div id="register-page" class="py-5">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="text-center mb-4">Create a New Account</h2>
+                <form id="register-form">
+                    <div class="mb-3">
+                        <label for="register-name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="register-name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="register-email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="register-email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="register-password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="register-password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="register-confirm-password" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="register-confirm-password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="register-role" class="form-label">Your Role</label>
+                        <select class="form-select" id="register-role" required>
+                            <option value="" selected disabled>Select your role</option>
+                            <option value="coach">Coach</option>
+                            <option value="manager">Team Manager</option>
+                            <option value="player">Player</option>
+                            <option value="parent">Parent</option>
+                            <option value="admin">Administrator</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                    <div class="text-center mt-3">
+                        <p>Already have an account? <a href="#" id="switch-to-login">Login here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="py-5">
+        <div class="container">
+            <h1 class="page-heading">Dashboard</h1>
+            <div class="row g-4 mb-5">
+                <div class="col-md-3">
+                    <div class="card stat-card p-3">
+                        <h5 class="text-muted">Total Teams</h5>
+                        <h2 class="mb-0">4</h2>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card p-3">
+                        <h5 class="text-muted">Active Players</h5>
+                        <h2 class="mb-0">42</h2>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card p-3">
+                        <h5 class="text-muted">Upcoming Events</h5>
+                        <h2 class="mb-0">7</h2>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card p-3">
+                        <h5 class="text-muted">Season Win Rate</h5>
+                        <h2 class="mb-0">65%</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Upcoming Events</h5>
+                            <button class="btn btn-sm btn-primary" id="add-event-btn">Add Event</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <div class="list-group-item schedule-item">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">Practice Session</h5>
+                                        <small>Tomorrow</small>
+                                    </div>
+                                    <p class="mb-1">Eagles Team | 5:00 PM - 7:00 PM</p>
+                                    <small>Lincoln Field, Court 3</small>
+                                </div>
+                                <div class="list-group-item schedule-item">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">Match vs Tigers</h5>
+                                        <small>In 3 days</small>
+                                    </div>
+                                    <p class="mb-1">Falcons Team | 2:00 PM - 4:00 PM</p>
+                                    <small>City Stadium, Field 1</small>
+                                </div>
+                                <div class="list-group-item schedule-item">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">Team Meeting</h5>
+                                        <small>Next Monday</small>
+                                    </div>
+                                    <p class="mb-1">All Teams | 7:00 PM - 8:00 PM</p>
+                                    <small>Training Center, Meeting Room B</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Your Teams</h5>
+                            <button class="btn btn-sm btn-primary" id="add-team-dashboard-btn">Add Team</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action team-link" data-team-id="1">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/api/placeholder/40/40" class="team-logo me-3" alt="Eagles">
+                                        <div>
+                                            <h5 class="mb-1">Eagles</h5>
+                                            <small>Basketball | 12 players</small>
+                                        </div>
+                                        <span class="ms-auto badge bg-success">Active</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action team-link" data-team-id="2">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/api/placeholder/40/40" class="team-logo me-3" alt="Falcons">
+                                        <div>
+                                            <h5 class="mb-1">Falcons</h5>
+                                            <small>Soccer | 16 players</small>
+                                        </div>
+                                        <span class="ms-auto badge bg-success">Active</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action team-link" data-team-id="3">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/api/placeholder/40/40" class="team-logo me-3" alt="Panthers">
+                                        <div>
+                                            <h5 class="mb-1">Panthers</h5>
+                                            <small>Basketball | 14 players</small>
+                                        </div>
+                                        <span class="ms-auto badge bg-warning text-dark">Off-season</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Recent Activity</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-user-plus text-success me-2"></i>
+                                        <span>New player <strong>Michael Brown</strong> joined the Eagles team</span>
+                                    </div>
+                                    <span class="text-muted">Today</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-calendar-check text-primary me-2"></i>
+                                        <span>Match vs Tigers scheduled for Sunday, 2:00 PM</span>
+                                    </div>
+                                    <span class="text-muted">Yesterday</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-medal text-warning me-2"></i>
+                                        <span>Falcons won their match against Bears 3-1</span>
+                                    </div>
+                                    <span class="text-muted">2 days ago</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-user-injured text-danger me-2"></i>
+                                        <span>Player <strong>James Wilson</strong> reported injury</span>
+                                    </div>
+                                    <span class="text-muted">3 days ago</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teams Page -->
+    <div id="teams-page" class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="page-heading mb-0">Teams</h1>
+                <button class="btn btn-primary" id="add-team-btn">
+                    <i class="fas fa-plus me-2"></i>Add New Team
+                </button>
+            </div>
+            <div class="row g-4" id="teams-container">
+                <div class="col-md-4">
+                    <div class="card team-card h-100">
+                        <img src="/api/placeholder/400/200" class="card-img-top" alt="Eagles Team">
+                        <div class="card-body">
+                            <h4 class="card-title">Eagles</h4>
+                            <p class="card-text">Basketball Team</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-success">Active</span>
+                                <span><i class="fas fa-users me-1"></i> 12 Players</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-primary team-details-btn" data-team-id="1">View Details</a>
+                                <button class="btn btn-outline-primary edit-team-btn" data-team-id="1">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card team-card h-100">
+                        <img src="/api/placeholder/400/200" class="card-img-top" alt="Falcons Team">
+                        <div class="card-body">
+                            <h4 class="card-title">Falcons</h4>
+                            <p class="card-text">Soccer Team</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-success">Active</span>
+                                <span><i class="fas fa-users me-1"></i> 16 Players</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-primary team-details-btn" data-team-id="2">View Details</a>
+                                <button class="btn btn-outline-primary edit-team-btn" data-team-id="2">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card team-card h-100">
+                        <img src="/api/placeholder/400/200" class="card-img-top" alt="Panthers Team">
+                        <div class="card-body">
+                            <h4 class="card-title">Panthers</h4>
+                            <p class="card-text">Basketball Team</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-warning text-dark">Off-season</span>
+                                <span><i class="fas fa-users me-1"></i> 14 Players</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-primary team-details-btn" data-team-id="3">View Details</a>
+                                <button class="btn btn-outline-primary edit-team-btn" data-team-id="3">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card team-card h-100">
+                        <img src="/api/placeholder/400/200" class="card-img-top" alt="Lions Team">
+                        <div class="card-body">
+                            <h4 class="card-title">Lions</h4>
+                            <p class="card-text">Football Team</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-secondary">Inactive</span>
+                                <span><i class="fas fa-users me-1"></i> 18 Players</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-primary team-details-btn" data-team-id="4">View Details</a>
+                                <button class="btn btn-outline-primary edit-team-btn" data-team-id="4">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Detail Page -->
+    <div id="team-detail-page" class="py-5">
+        <div class="container">
+            <div class
